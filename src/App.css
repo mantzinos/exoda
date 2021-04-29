@@ -1,0 +1,132 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+.landing {
+  background: url("https://cdn.pixabay.com/photo/2014/02/27/16/10/tree-276014_960_720.jpg")
+    no-repeat center/cover;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.land {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 20%;
+}
+
+.button {
+  font-size: 1.2em;
+  padding: 0.3em 1.3em;
+  margin: 0 10px;
+  text-decoration: none;
+  border: 2px solid #ccff33;
+  color: #ccff33;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+
+  border-radius: 10%/50%;
+  background-color: rgba(43, 147, 72, 0.5);
+  opacity: 1;
+  font-weight: 400;
+}
+
+.button:hover {
+  opacity: 0.9;
+  /* box-shadow: 0 0 1px 1px; */
+}
+
+.login {
+  background: url("https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_960_720.jpg")
+    no-repeat center/cover;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #ccff33;
+}
+.register {
+  background: url("https://cdn.pixabay.com/photo/2015/12/01/20/28/forest-1072828_960_720.jpg")
+    no-repeat center/cover;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #ccff33;
+}
+
+.ola {
+  width: 500px;
+  height: 500px;
+  border: 1px solid #ccff33;
+  background-color: rgba(43, 147, 72, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 1.2em;
+  border-radius: 5%;
+  opacity: 1;
+}
+.ola2 {
+  width: 500px;
+  height: 700px;
+  border: 1px solid #ccff33;
+  background-color: rgba(43, 147, 72, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 1.2em;
+  border-radius: 5%;
+  opacity: 1;
+}
+
+.title {
+  /* background-color: rgba(43, 147, 72, 0.5); */
+  width: 90%;
+  height: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inputs {
+  /* background-color: rgba(43, 147, 72, 0.5); */
+  width: 90%;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.mylabel {
+  width: 50%;
+  height: 5%;
+  padding: 1em;
+  /* background-color: rgba(43, 147, 72, 0.5); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1 !important;
+}
+.myinput {
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  padding: 0.2em 0;
+  font-size: 1em;
+  width: 50%;
+  background-color: rgba(204, 255, 51, 0.2);
+}
+button:hover {
+  cursor: pointer;
+}
