@@ -25,7 +25,7 @@ const Register = () => {
     event.preventDefault();
     try {
       const res = await axios.post(
-        `${process.env.SERVER_URL}/register`,
+        `${process.env.REACT_APP_SERVER}/register`,
         change
       );
       console.log(res.data);

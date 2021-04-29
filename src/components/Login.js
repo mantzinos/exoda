@@ -23,7 +23,10 @@ const Login = () => {
   const go = async event => {
     try {
       event.preventDefault();
-      const me = await axios.post(`${process.env.SERVER_URL}/login`, getIt);
+      const me = await axios.post(
+        `${process.env.REACT_APP_SERVER}/login`,
+        getIt
+      );
       setCheck(prev => me.data);
       console.log(me.data);
     } catch (err) {

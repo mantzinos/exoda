@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Landing = () => {
-  const aa = process.env.REACT_APP_SERVER;
-
   return (
     <section className="landing">
       <div className="land">
