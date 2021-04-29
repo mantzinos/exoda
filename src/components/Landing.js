@@ -1,11 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-require("dotenv").config();
 
 const Landing = () => {
-  const aa = process.env.SERVER_URL;
-  console.log("dose gamo leme aaa ", aa);
-  // console.log(process.env.SERVER_URL);
+  const aa = process.env.REACT_APP_SERVER;
+
   return (
     <section className="landing">
       <div className="land">
