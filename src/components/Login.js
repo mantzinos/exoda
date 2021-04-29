@@ -23,7 +23,7 @@ const Login = () => {
   const go = async event => {
     try {
       event.preventDefault();
-      const me = await axios.post(`${process.env.SERVER_URL}/api/login`, getIt);
+      const me = await axios.post(`${process.env.SERVER_URL}/login`, getIt);
       setCheck(prev => me.data);
       console.log(me.data);
       console.log(process.env.SERVER_URL);
