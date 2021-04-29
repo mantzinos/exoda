@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Landing = () => {
   const aa = process.env.SERVER_URL;
-  console.log("dose gamo", aa);
+  console.log("dose gamo leme", aa);
   // console.log(process.env.SERVER_URL);
   return (
     <section className="landing">
