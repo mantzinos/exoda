@@ -4,6 +4,8 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Main from "./components/Main";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+const dotenv = require("dotenv");
+dotenv.config();
 
 function App() {
   return (
