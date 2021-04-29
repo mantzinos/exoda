@@ -130,3 +130,7 @@ input {
 button:hover {
   cursor: pointer;
 }
+
+button {
+  cursor: pointer;
+}
