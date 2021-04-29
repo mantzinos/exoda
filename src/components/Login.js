@@ -26,6 +26,7 @@ const Login = () => {
       const me = await axios.post(`${process.env.SERVER_URL}/api/login`, getIt);
       setCheck(prev => me.data);
       console.log(me.data);
+      console.log(process.env.SERVER_URL);
     } catch (err) {
       console.error(err.message);
     }
