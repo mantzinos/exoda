@@ -23,7 +23,10 @@ const Login = () => {
   const go = async event => {
     try {
       event.preventDefault();
-      const me = await axios.post("http://localhost:5000/api/login", getIt);
+      const me = await axios.post(
+        "https://myexoda.herokuapp.com/api/login",
+        getIt
+      );
       setCheck(prev => me.data);
       console.log(me.data);
     } catch (err) {

@@ -25,7 +25,7 @@ const Register = () => {
     event.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/register",
+        "https://myexoda.herokuapp.com/api/register",
         change
       );
       console.log(res.data);
