@@ -5,6 +5,8 @@ import Calculate from "./Calculate";
 
 const Main = props => {
   const [lastOne, setLastOne] = useState(true);
+  const [dostaOlaa, setDostaOlaa] = useState(false);
+  const [dostaOmos, setDostaOmos] = useState(false);
   const [user, setUser] = useState({});
   const [item, setItem] = useState(true);
   const [palia, setPalia] = useState("");
@@ -198,6 +200,7 @@ const Main = props => {
       };
       xesemesa();
     }
+    setDostaOmos(!dostaOmos);
   };
   const dostaOla2 = async () => {
     console.log(change);
@@ -206,6 +209,7 @@ const Main = props => {
         `${process.env.REACT_APP_SERVER}/main/${props.match.params.name}`,
         change
       );
+      setDostaOlaa(!dostaOlaa);
     } catch (err) {
       console.log(err);
     }
@@ -238,10 +242,18 @@ const Main = props => {
             Αγορές από το ίντερνετ
           </div>
           <div className="enimerosi">
-            <div title="myBal" className="mesa2" onClick={dostaOla}>
+            <div
+              title="myBal"
+              className={!dostaOmos ? "mesa2" : "mesa4"}
+              onClick={dostaOla}
+            >
               Ενημέρωση
             </div>
-            <div title="myBal" className="mesa2" onClick={dostaOla2}>
+            <div
+              title="myBal"
+              className={!dostaOlaa ? "mesa2" : "mesa3"}
+              onClick={dostaOla2}
+            >
               Αποθήκευση
             </div>
           </div>
