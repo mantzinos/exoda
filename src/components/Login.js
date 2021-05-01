@@ -19,6 +19,7 @@ const Login = () => {
       };
     });
   };
+  const myName = `/main/${getIt.username}`;
 
   const go = async event => {
     try {
@@ -29,12 +30,20 @@ const Login = () => {
       );
       setCheck(prev => me.data);
       console.log(me.data);
+      console.log(myName);
+      console.log(getIt.password);
     } catch (err) {
       console.error(err.message);
     }
   };
   if (check === "User login") {
-    return <Redirect to="/main" />;
+    return <Redirect to={myName} pass={getIt.password} />;
+  }
+  if (check === "Wrong password") {
+    return <Redirect to="/fail" />;
+  }
+  if (check === "User not exist") {
+    return <Redirect to="/nouser" />;
   }
   return (
     <section className="login">
