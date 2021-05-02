@@ -3,7 +3,14 @@ import { Redirect } from "react-router";
 const axios = require("axios");
 
 const Calculate = props => {
-  const [dose, setDose] = useState([]);
+  const [dose, setDose] = useState([
+    {
+      kafes: 0,
+      logariasmoi: 0,
+      internet: 0,
+      supermarket: 0,
+    },
+  ]);
   const [check, setCheck] = useState(false);
   const [sinolo, setSinolo] = useState(1);
   useEffect(() => {
@@ -14,8 +21,56 @@ const Calculate = props => {
         );
         // console.log(props.match.params);
         // console.log(me.data);
-        setDose(me.data);
-        console.log(dose);
+        const make = await me.data;
+        const makeNew = [];
+        const makekafe = make.map(a => a.kafes);
+        const makekafeLast = [];
+        makekafe.forEach(a => {
+          if (a === undefined) {
+            makekafeLast.push(0);
+          } else {
+            makekafeLast.push(a);
+          }
+        });
+        const makesuper = make.map(a => a.supermarket);
+        const makesuperLast = [];
+        makesuper.forEach(a => {
+          if (a === undefined) {
+            makesuperLast.push(0);
+          } else {
+            makesuperLast.push(a);
+          }
+        });
+        const makelogariasmoi = make.map(a => a.logariasmoi);
+        const makelogariasmoiLast = [];
+        makelogariasmoi.forEach(a => {
+          if (a === undefined) {
+            makelogariasmoiLast.push(0);
+          } else {
+            makelogariasmoiLast.push(a);
+          }
+        });
+        const makeinternet = make.map(a => a.internet);
+        const makeinternetLast = [];
+        makeinternet.forEach(a => {
+          if (a === undefined) {
+            makeinternetLast.push(0);
+          } else {
+            makeinternetLast.push(a);
+          }
+        });
+
+        for (let i = 0; i < make.length; i++) {
+          makeNew.push({
+            kafes: makekafeLast[i],
+            internet: makeinternetLast[i],
+            logariasmoi: makelogariasmoiLast[i],
+            supermarket: makesuperLast[i],
+          });
+        }
+
+        setDose(makeNew);
+        console.log(makeNew);
       } catch (err) {
         console.log(err);
       }
@@ -58,7 +113,7 @@ const Calculate = props => {
                   .filter(a => a.kafes !== undefined)
                   .map(a => a.kafes)
                   .reduce((a, b) => a + b)
-              : 0}
+              : "0"}
           </div>
         </div>
         <div className="calcItemm">
