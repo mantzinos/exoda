@@ -177,7 +177,8 @@ const Main = props => {
           }
           break;
         default:
-          console.log("Error");
+          setNewTest(prev => prev + 0);
+          break;
       }
     }
   };
