@@ -66,11 +66,13 @@ const Calculate = props => {
             internet: makeinternetLast[i],
             logariasmoi: makelogariasmoiLast[i],
             supermarket: makesuperLast[i],
+            date: make[i].date,
           });
+          console.log(make[i].date, "**DATE**");
         }
 
         setDose(makeNew);
-        console.log(makeNew);
+        // console.log(makeNew);
       } catch (err) {
         console.log(err);
       }
