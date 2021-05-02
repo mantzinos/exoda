@@ -379,7 +379,7 @@ td:hover {
 }
 
 .calcItemm {
-  background-color: #e76f51;
+  /* background-color: #e76f51; */
   width: 18%;
   height: 80%;
   display: flex;

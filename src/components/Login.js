@@ -10,6 +10,12 @@ const Login = () => {
 
   const [check, setCheck] = useState({});
 
+  const checkEVent = event => {
+    if (event.key === "enter") {
+      console.log("Done");
+    }
+  };
+
   const handleChange = event => {
     const { name, value } = event.target;
     setGetIt(prev => {
@@ -53,7 +59,7 @@ const Login = () => {
             <h1>Σύνδεση</h1>
           </div>
         </div>
-        <div className="inputs">
+        <form className="inputs" onKeyPress={checkEVent}>
           <div className="mylabel">
             <label htmlFor="username">Username</label>
           </div>
@@ -82,7 +88,7 @@ const Login = () => {
               Login
             </button>
           </div>
-        </div>
+        </form>
       </div>
     </section>
   );
