@@ -7,7 +7,7 @@ const Main = props => {
   const [lastOne, setLastOne] = useState(true);
   const [dostaOlaa, setDostaOlaa] = useState(false);
   const [dostaOmos, setDostaOmos] = useState(false);
-  const [user, setUser] = useState({});
+  const [userr, setUserr] = useState({});
   const [item, setItem] = useState(true);
   const [palia, setPalia] = useState("");
   const [newTest, setNewTest] = useState("");
@@ -28,8 +28,7 @@ const Main = props => {
       const me = await axios.get(
         `${process.env.REACT_APP_SERVER}/main/${props.match.params.name}`
       );
-      setUser(me.data);
-      // console.log(user);
+      setUserr(me.data);
     };
     getme();
   }, []);
@@ -183,14 +182,15 @@ const Main = props => {
     }
   };
 
-  const dostaOla = async () => {
+  const dostaOla = () => {
     if (mytest !== undefined) {
       const { kafes, logariasmoi, supermarket, internet } = mytest;
-      const xesemesa = async () => {
-        await setChange(prev => {
+      const xesemesa = () => {
+        console.log(userr, "AAAAAA");
+        setChange(prev => {
           return {
             ...prev,
-            user,
+            user: userr,
             kafes,
             logariasmoi,
             supermarket,
@@ -199,25 +199,23 @@ const Main = props => {
         });
       };
       xesemesa();
+      setDostaOmos(!dostaOmos);
     }
-    setDostaOmos(!dostaOmos);
   };
   const dostaOla2 = async () => {
     console.log(change);
     try {
-      await axios.post(
-        `${process.env.REACT_APP_SERVER}/main/${props.match.params.name}`,
-        change
-      );
+      console.log(change, "*****");
+      await axios.post(`${process.env.REACT_APP_SERVER}/exoda`, change);
       setDostaOlaa(!dostaOlaa);
     } catch (err) {
       console.log(err);
     }
   };
-  const meme = `/main/calc/${user.username}`;
+  const meme = `/main/calc/${userr.username}`;
   const yoyo = () => {
     setLastOne(prev => false);
-    console.log(user.username, "****");
+    console.log(userr.username, "****");
   };
   if (!lastOne) {
     return <Redirect to={meme} />;

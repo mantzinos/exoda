@@ -46,32 +46,46 @@ const Register = () => {
             <h1>Εγγραφή</h1>
           </div>
         </div>
-        <div className="inputs">
+        <form className="inputs" onSubmit={handleSub}>
           <div className="mylabel">
             <label htmlFor="username">Username</label>
           </div>
           <div className="myinput">
-            <input onChange={handleChange} name="username" type="text" />
+            <input
+              required
+              onChange={handleChange}
+              name="username"
+              type="text"
+              minLength="3"
+              maxLength="10"
+            />
           </div>
 
           <div className="mylabel">
             <label htmlFor="password">Password</label>
           </div>
           <div className="myinput">
-            <input onChange={handleChange} name="password" type="password" />
+            <input
+              required
+              onChange={handleChange}
+              name="password"
+              type="password"
+              minLength="3"
+              maxLength="10"
+            />
           </div>
           <div className="mylabel">
             <label htmlFor="email">Email</label>
           </div>
           <div className="myinput">
-            <input onChange={handleChange} name="email" type="email" />
+            <input required onChange={handleChange} name="email" type="email" />
           </div>
           <div>
-            <button onClick={handleSub} className="button">
+            <button type="submit" className="button">
               Register
             </button>
           </div>
-        </div>
+        </form>
       </div>
     </section>
   );

@@ -30,7 +30,8 @@ const Calculate = props => {
   };
 
   if (check) {
-    return <Redirect to={`/main/${dose[0].user.username}`} />;
+    // return <Redirect to={`/main/${dose[0].user.username}`} />;
+    return <Redirect to={`/main/${props.match.params.name}`} />;
   }
 
   return (

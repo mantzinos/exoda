@@ -58,14 +58,24 @@ const Login = () => {
             <label htmlFor="username">Username</label>
           </div>
           <div className="myinput">
-            <input onChange={handleChange} name="username" type="text" />
+            <input
+              required
+              onChange={handleChange}
+              name="username"
+              type="text"
+            />
           </div>
 
           <div className="mylabel">
             <label htmlFor="password">Password</label>
           </div>
           <div className="myinput">
-            <input onChange={handleChange} name="password" type="password" />
+            <input
+              required
+              onChange={handleChange}
+              name="password"
+              type="password"
+            />
           </div>
           <div>
             <button onClick={go} className="button">
